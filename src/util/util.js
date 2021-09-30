@@ -49,10 +49,10 @@ class Util {
 
   static getFavoritesBooks(activeGroup, books) {
     let favoritesBooks = [];
-    if (activeGroup === groupNames.FAVORITES) {
+    if (activeGroup === groupNames.ALL) {
       return books;
     }
-    favoritesBooks = books.filter((item) => item.favorites === true);
+    favoritesBooks = books.filter((item) => item.favorite === true);
     return favoritesBooks;
   }
 

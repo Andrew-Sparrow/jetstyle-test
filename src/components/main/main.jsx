@@ -13,7 +13,7 @@ function Main() {
   const activeGroupName = useSelector(getActiveGroupName);
   const books = useSelector(getBooks);
 
-  const filteredBooks = Util.getFilteredBooks(activeGroupName, books);
+  const filteredBooks = Util.getFavoritesBooks(activeGroupName, books);
 
   return (
     <main className="page__main page__main--index">
