@@ -1,10 +1,10 @@
 import {combineReducers} from 'redux';
-import {contacts} from './contacts/contacts';
+import {books} from './books/books';
 
 export const NameSpace = {
-  CONTACTS: 'CONTACTS',
+  BOOKS: 'BOOKS',
 };
 
 export default combineReducers({
-  [NameSpace.CONTACTS]: contacts,
+  [NameSpace.BOOKS]: books,
 });

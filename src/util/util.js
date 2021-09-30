@@ -38,13 +38,13 @@ class Util {
     return placesFromServer.map((place) => this.adaptToClient(place));
   }
 
-  static getFilteredContacts(activeGroup, contacts) {
-    let filteredContacts = [];
+  static getFilteredBooks(activeGroup, books) {
+    let filteredBooks = [];
     if (activeGroup === groupNames.ALL) {
-      return contacts;
+      return books;
     }
-    filteredContacts = contacts.filter((item) => item.group === activeGroup);
-    return filteredContacts;
+    filteredBooks = books.filter((item) => item.group === activeGroup);
+    return filteredBooks;
   }
 
   static formatDate = (dateString) => {
@@ -59,11 +59,11 @@ class Util {
     return generatedIdList;
   }
 
-  static getUpdatedContacts(id, contacts, newContact) {
-    const newContacts = [...contacts];
-    const index = newContacts.findIndex((contact) => contact.id === id);
-    newContacts[index].isFavorite = newContact.isFavorite;
-    return newContacts;
+  static getUpdatedBooks(id, books, newContact) {
+    const newBooks = [...books];
+    const index = newBooks.findIndex((contact) => contact.id === id);
+    newBooks[index].isFavorite = newContact.isFavorite;
+    return newBooks;
   }
 }
 

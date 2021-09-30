@@ -7,29 +7,29 @@ import Tabs from '../tabs/tabs';
 
 import Util from '../../util/util';
 import MainEmpty from '../main-empty/main-empty';
-import {getContacts, getActiveGroupName} from '../../store/contacts/selectors';
+import {getBooks, getActiveGroupName} from '../../store/books/selectors';
 
 function Main() {
   const activeGroupName = useSelector(getActiveGroupName);
-  const contacts = useSelector(getContacts);
+  const books = useSelector(getBooks);
 
-  const filteredContacts = Util.getFilteredContacts(activeGroupName, contacts);
+  const filteredBooks = Util.getFilteredBooks(activeGroupName, books);
 
   return (
     <main className="page__main page__main--index">
       <h1 className="visually-hidden">Cities</h1>
       <Tabs />
       {
-        filteredContacts.length === 0
+        filteredBooks.length === 0
           ? <MainEmpty activeGroupName={activeGroupName}/>
           : (
             <div className="cities">
               <div className="cities__places-container container">
                 <section className="cities__places places">
-                  <h2 className="visually-hidden">Contacts</h2>
-                  <b className="places__found">{filteredContacts.length} contacts in `{activeGroupName}` group</b>
+                  <h2 className="visually-hidden">Books</h2>
+                  <b className="places__found">{filteredBooks.length} books in `{activeGroupName}` group</b>
                   <ContactList
-                    items={filteredContacts}
+                    items={filteredBooks}
                     // first page number
                     initialPageNumber={0}
                     activeTabName={activeGroupName}

@@ -1,12 +1,12 @@
 import {
   ActionType,
   changeGroup,
-  loadPlaces,
+  loadPlaces as loadBooks,
   changeFavorite,
   redirectToRoute
 } from './actions';
 
-const offers = [
+const books = [
   {
     'id': 1,
     'price': 220,
@@ -377,11 +377,11 @@ describe('Actions', () => {
 
   it('action creator for loadPlaces returns correct action', () => {
     const expectedAction = {
-      type: ActionType.LOAD_CONTACTS,
-      payload: offers,
+      type: ActionType.LOAD_BOOKS,
+      payload: books,
     };
 
-    expect(loadPlaces(offers)).toEqual(expectedAction);
+    expect(loadBooks(books)).toEqual(expectedAction);
   });
 
   it('action creator for changeFavorite returns correct action', () => {

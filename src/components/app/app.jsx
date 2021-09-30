@@ -6,7 +6,7 @@ import {AppRoute} from '../../const';
 import Main from '../main/main';
 import Error from '../not-found/not-found';
 import LoadingScreen from '../loading-screen/loading-screen';
-import {getIsDataLoaded} from '../../store/contacts/selectors';
+import {getIsDataLoaded} from '../../store/books/selectors';
 
 function App() {
   const isDataLoaded = useSelector(getIsDataLoaded);

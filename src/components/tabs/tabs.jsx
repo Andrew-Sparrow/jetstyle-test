@@ -4,7 +4,7 @@ import {useSelector, useDispatch} from 'react-redux';
 
 import {groupList} from '../../const';
 import {changeGroup} from '../../store/actions';
-import {getActiveGroupName} from '../../store/contacts/selectors';
+import {getActiveGroupName} from '../../store/books/selectors';
 
 function Tabs(props) {
   const activeGroupName = useSelector(getActiveGroupName);

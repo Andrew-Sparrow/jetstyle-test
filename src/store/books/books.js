@@ -3,28 +3,28 @@ import Util from '../../util/util';
 
 import {
   changeGroup,
-  loadContacts,
+  loadBooks,
   changeFavorite,
 } from '../actions';
 
 const initialState = {
-  contacts: [],
+  books: [],
   isDataLoaded: false,
   activeGroupName: 'All',
 };
 
-const contacts = createReducer(initialState, (builder) => {
+const books = createReducer(initialState, (builder) => {
   builder
     .addCase(changeGroup, (state, action) => {
       state.activeGroupName = action.payload;
     })
-    .addCase(loadContacts, (state, action) => {
-      state.contacts = action.payload;
+    .addCase(loadBooks, (state, action) => {
+      state.books = action.payload;
       state.isDataLoaded = true;
     })
     .addCase(changeFavorite, (state, action) => {
-      state.places = Util.getUpdatedContacts(action.payload.id, state.places, action.payload.newPlace);
+      state.places = Util.getUpdatedBooks(action.payload.id, state.places, action.payload.newPlace);
     })
 });
 
-export {contacts};
+export {books};

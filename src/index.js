@@ -7,7 +7,7 @@ import {Provider} from 'react-redux';
 import {getAxiosInstance} from './services/api';
 import App from './components/app/app';
 import rootReducer from './store/root-reducer';
-import {fetchContactsList} from './store/api-actions';
+import {fetchBooksList} from './store/api-actions';
 import {redirect} from './store/middlewares/redirect';
 import reportWebVitals from './reportWebVitals';
 
@@ -23,7 +23,7 @@ const store = configureStore({
     }).concat(redirect),
 });
 
-store.dispatch(fetchContactsList());
+store.dispatch(fetchBooksList());
 
 ReactDOM.render(
   <React.StrictMode>

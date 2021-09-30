@@ -1,14 +1,14 @@
 import {
-  loadContacts,
+  loadBooks,
   changeFavorite,
 } from './actions';
 
 import {APIRoute} from '../const';
 
-export const fetchContactsList = () => (dispatch, _getState, api) => (
-  api.get(APIRoute.CONTACTS)
+export const fetchBooksList = () => (dispatch, _getState, api) => (
+  api.get(APIRoute.BOOKS)
     .then(({data}) => {
-      dispatch(loadContacts(data));
+      dispatch(loadBooks(data));
     })
     .catch((err) => {})
 );

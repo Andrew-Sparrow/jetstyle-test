@@ -10,7 +10,7 @@ function Layout(props) {
         <div className="container">
           <div className="header__wrapper">
             <div className="header__left">
-              <h2 className="header__title">Contacts</h2>
+              <h2 className="header__title">Books</h2>
             </div>
           </div>
         </div>
