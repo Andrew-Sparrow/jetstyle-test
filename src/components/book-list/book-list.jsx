@@ -3,8 +3,8 @@ import React, {useReducer, useEffect} from 'react';
 import {Fragment} from 'react';
 import PropTypes from 'prop-types';
 
-import Contact from '../contact/contact';
-import contactProp from '../contact/contact.prop';
+import Book from '../book/book';
+import contactProp from '../book/book.prop';
 import Pagination from '../pagination/pagination';
 
 const FIRST_PAGE_NUMBER = 0; // the initialPageNumber starts with zero
@@ -63,16 +63,14 @@ function ContactList(props) {
   return (
     <Fragment>
       <ul className="cities__places-list places__list tabs__content">
-        {state.slicedItems.map((contact) => (
-          <Contact
-            key={contact.id}
-            id={contact.id}
-            name={contact.name}
-            lastName={contact.lastName}
-            group={contact.group}
-            phone={contact.phone}
-            email={contact.email}
-            avatar={contact.avatar}
+        {state.slicedItems.map((book) => (
+          <Book
+            key={book.id}
+            id={book.id}
+            title={book.title}
+            author={book.author}
+            group={book.group}
+            img={book.img}
           />
         ))}
       </ul>

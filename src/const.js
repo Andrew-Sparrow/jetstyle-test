@@ -2,7 +2,7 @@ export const AppRoute = {
   MAIN: '/',
 };
 
-export const defaultAvatar = 'https://iupac.org/wp-content/uploads/2018/05/default-avatar.png';
+export const defaultImg = 'https://iupac.org/wp-content/uploads/2018/05/default-avatar.png';
 
 export const groupList = [
   'All',

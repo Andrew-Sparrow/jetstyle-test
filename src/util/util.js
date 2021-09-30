@@ -47,6 +47,15 @@ class Util {
     return filteredBooks;
   }
 
+  static getFavoritesBooks(activeGroup, books) {
+    let favoritesBooks = [];
+    if (activeGroup === groupNames.FAVORITES) {
+      return books;
+    }
+    favoritesBooks = books.filter((item) => item.favorites === true);
+    return favoritesBooks;
+  }
+
   static formatDate = (dateString) => {
     const DATE_OPTIONS = {year: 'numeric', month: 'short'};
 

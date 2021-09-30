@@ -1,7 +1,7 @@
 import React from 'react';
 import {useSelector} from 'react-redux';
 
-import ContactList from '../contact-list/contact-list';
+import ContactList from '../book-list/book-list';
 import withLayout from '../hocs/with-layout';
 import Tabs from '../tabs/tabs';
 
