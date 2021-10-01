@@ -687,12 +687,17 @@ img {
   height: 70px;
 }
 
+.contact__edit-icon,
 .contact__bookmark-icon {
   fill: none;
   stroke: #979797;
   stroke-width: 2;
   -webkit-transition: fill .3s, stroke .3s;
   transition: fill .3s, stroke .3s;
+}
+
+.contact__edit-icon {
+  fill: #4481c3;
 }
 
 .page__main--index-empty .cities__right-section {

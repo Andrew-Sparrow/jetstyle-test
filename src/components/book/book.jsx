@@ -32,13 +32,13 @@ function Book(props) {
           <span className="visually-hidden">To bookmarks</span>
         </button>
         <button className="contact__bookmark-button button" type="button">
-          <svg className="contact__bookmark-icon" width="30" height="30" style={{stroke: favorite && '#4481c3'}}>
-            <use xlinkHref="#icon-bookmark"></use>
+          <svg className="contact__edit-icon" width="30" height="30">
+            <use xlinkHref="#icon-pencil"></use>
           </svg>
-          <span className="visually-hidden">To bookmarks</span>
+          <span className="visually-hidden">To edit</span>
         </button>
         <button className="contact__bookmark-button button" type="button">
-          <svg className="contact__bookmark-icon" width="30" height="30" style={{stroke: favorite && '#4481c3'}}>
+          <svg className="contact__bookmark-icon" width="30" height="30">
             <use xlinkHref="#icon-bookmark"></use>
           </svg>
           <span className="visually-hidden">To bookmarks</span>
