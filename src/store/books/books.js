@@ -23,7 +23,7 @@ const books = createReducer(initialState, (builder) => {
       state.isDataLoaded = true;
     })
     .addCase(changeFavorite, (state, action) => {
-      state.places = Util.getUpdatedBooks(action.payload.id, state.places, action.payload.newPlace);
+      state.books = Util.getUpdatedBooks(action.payload.id, state.books, action.payload);
     })
 });
 

@@ -13,9 +13,10 @@ export const fetchBooksList = () => (dispatch, _getState, api) => (
     .catch((err) => {})
 );
 
-export const addToFavorite = (id, isFavorite) => (dispatch, _getState, api) => (
-  api.post(`${APIRoute.FAVORITE }/${id}/${isFavorite ? 1 : 0}`)
+export const addToFavorite = (id, favorite) => (dispatch, _getState, api) => (
+  api.post(`${APIRoute.BOOKS}/${id}/${favorite ? true : false}`)
     .then((info) => {
+      console.log(info);
       dispatch(changeFavorite(id, info.data));
     })
     .catch((err) => {})

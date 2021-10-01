@@ -68,10 +68,10 @@ class Util {
     return generatedIdList;
   }
 
-  static getUpdatedBooks(id, books, newContact) {
+  static getUpdatedBooks(id, books, newBook) {
     const newBooks = [...books];
-    const index = newBooks.findIndex((contact) => contact.id === id);
-    newBooks[index].isFavorite = newContact.isFavorite;
+    const index = newBooks.findIndex((book) => book.id === id);
+    newBooks[index].favorite = newBook.favorite;
     return newBooks;
   }
 }

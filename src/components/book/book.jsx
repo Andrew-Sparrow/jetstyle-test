@@ -1,7 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import {useDispatch} from 'react-redux';
 
 import {defaultImg} from '../../const';
+import {addToFavorite} from '../../store/api-actions';
 
 function Book(props) {
   const {
@@ -12,6 +14,13 @@ function Book(props) {
     img,
     favorite
   } = props;
+
+  const dispatch = useDispatch();
+
+  const onFavoriteClick = (evt) => {
+    evt.preventDefault();
+    dispatch(addToFavorite(id, !favorite));
+  };
 
   return (
     <li
@@ -25,7 +34,7 @@ function Book(props) {
         <p className="contact__data">Group: <span className="contact__name">{group}</span></p>
       </div>
       <div className="contact__buttons">
-        <button className="contact__bookmark-button button" type="button">
+        <button className="contact__bookmark-button button" type="button" onClick={onFavoriteClick}>
           <svg className="contact__bookmark-icon" width="30" height="30" style={{stroke: favorite && '#4481c3'}}>
             <use xlinkHref="#icon-bookmark"></use>
           </svg>
