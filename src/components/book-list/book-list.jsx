@@ -71,6 +71,7 @@ function ContactList(props) {
             author={book.author}
             group={book.group}
             img={book.img}
+            favorite={book.favorite}
           />
         ))}
       </ul>
