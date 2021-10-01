@@ -39,7 +39,7 @@ function Book(props) {
         </button>
         <button className="contact__bookmark-button button" type="button">
           <svg className="contact__bookmark-icon" width="30" height="30">
-            <use xlinkHref="#icon-bookmark"></use>
+            <use xlinkHref="#icon-delete"></use>
           </svg>
           <span className="visually-hidden">To bookmarks</span>
         </button>
