@@ -11,6 +11,7 @@ export const getAxiosInstance = () => {
     timeout: REQUEST_TIMEOUT,
     headers: {
       'x-token': token,
+      'Content-Type': 'application/ json'
     },
   });
 

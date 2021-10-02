@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import {useDispatch} from 'react-redux';
 
 import {defaultImg} from '../../const';
-import {addToFavorite} from '../../store/api-actions';
+import {addToFavorite, deleteItemApi} from '../../store/api-actions';
 
 function Book(props) {
   const {
@@ -22,6 +22,11 @@ function Book(props) {
     dispatch(addToFavorite(id, !favorite));
   };
 
+  const onDeleteClick = (evt) => {
+    evt.preventDefault();
+    dispatch(deleteItemApi(id));
+  };
+
   return (
     <li
       className="contact"
@@ -38,19 +43,19 @@ function Book(props) {
           <svg className="contact__bookmark-icon" width="30" height="30" style={{stroke: favorite && '#4481c3'}}>
             <use xlinkHref="#icon-bookmark"></use>
           </svg>
-          <span className="visually-hidden">To bookmarks</span>
+          <span className="visually-hidden">Add to bookmarks</span>
         </button>
         <button className="contact__bookmark-button button" type="button">
           <svg className="contact__edit-icon" width="30" height="30">
             <use xlinkHref="#icon-pencil"></use>
           </svg>
-          <span className="visually-hidden">To edit</span>
+          <span className="visually-hidden">Edit</span>
         </button>
-        <button className="contact__bookmark-button button" type="button">
+        <button className="contact__bookmark-button button" type="button" onClick={onDeleteClick}>
           <svg className="contact__bookmark-icon" width="30" height="30">
             <use xlinkHref="#icon-delete"></use>
           </svg>
-          <span className="visually-hidden">To bookmarks</span>
+          <span className="visually-hidden">Delete</span>
         </button>
       </div>
     </li>

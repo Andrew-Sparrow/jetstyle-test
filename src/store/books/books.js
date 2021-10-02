@@ -5,6 +5,7 @@ import {
   changeGroup,
   loadBooks,
   changeFavorite,
+  deleteItemAction
 } from '../actions';
 
 const initialState = {
@@ -24,6 +25,9 @@ const books = createReducer(initialState, (builder) => {
     })
     .addCase(changeFavorite, (state, action) => {
       state.books = Util.getUpdatedBooks(action.payload.id, state.books, action.payload);
+    })
+    .addCase(deleteItemAction, (state, action) => {
+      state.books = Util.deleteItem(action.payload, state.books);
     })
 });
 

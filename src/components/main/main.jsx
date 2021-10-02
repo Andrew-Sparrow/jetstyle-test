@@ -33,6 +33,7 @@ function Main() {
                     // first page number
                     initialPageNumber={0}
                     activeTabName={activeGroupName}
+                    activeBooks={filteredBooks}
                   />
                 </section>
               </div>

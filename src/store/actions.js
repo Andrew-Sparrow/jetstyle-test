@@ -4,27 +4,31 @@ export const ActionType = {
   CHANGE_GROUP: 'books/changeGroup',
   LOAD_BOOKS: 'books/loadBooks',
   CHANGE_FAVORITE: 'books/isFavorite',
-  SEND_COMMENT: 'comment/sendComment',
-  SEND_COMMENT_RATING: 'comment/sendCommentRating',
+  DELETE_ITEM: 'books/delete',
   REDIRECT_TO_ROUTE: 'places/redirectToRoute',
 };
 
 export const changeGroup = createAction(
   ActionType.CHANGE_GROUP,
-  (groupName) => ({payload: groupName}),
+  (groupName) => ({payload: groupName})
 );
 
 export const loadBooks = createAction(
   ActionType.LOAD_BOOKS,
-  (books) => ({payload: books}),
+  (books) => ({payload: books})
 );
 
 export const changeFavorite = createAction(
   ActionType.CHANGE_FAVORITE,
-  (id, newPlace) => ({payload: {id, newPlace}}),
+  (id, newPlace) => ({payload: {id, newPlace}})
+)
+
+export const deleteItemAction = createAction(
+  ActionType.DELETE_ITEM,
+  (id) => ({payload: id})
 );
 
 export const redirectToRoute = createAction(
   ActionType.REDIRECT_TO_ROUTE,
-  (url) => ({payload: url}),
+  (url) => ({payload: url})
 );
