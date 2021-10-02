@@ -32,10 +32,10 @@ const Util = {
     return generatedIdList;
   },
 
-  getUpdatedBooks(id, books, newBook) {
+  getUpdatedBooks(id, books, favorite) {
     const newBooks = [...books];
     const index = newBooks.findIndex((book) => book.id === id);
-    newBooks[index].favorite = newBook.favorite;
+    newBooks[index].favorite = favorite;
     return newBooks;
   },
 

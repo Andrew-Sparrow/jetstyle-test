@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import {useDispatch} from 'react-redux';
 
 import {defaultImg} from '../../const';
-import {addToFavorite, deleteItemApi} from '../../store/api-actions';
+import {addToFavoriteApi, deleteItemApi} from '../../store/api-actions';
 
 function Book(props) {
   const {
@@ -18,8 +18,7 @@ function Book(props) {
   const dispatch = useDispatch();
 
   const onFavoriteClick = (evt) => {
-    evt.preventDefault();
-    dispatch(addToFavorite(id, !favorite));
+    dispatch(addToFavoriteApi(id, !favorite));
   };
 
   const onDeleteClick = (evt) => {

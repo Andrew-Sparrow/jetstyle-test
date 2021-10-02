@@ -4,7 +4,7 @@ import Util from '../../util/util';
 import {
   changeGroup,
   loadBooks,
-  changeFavorite,
+  changeFavoriteAction,
   deleteItemAction
 } from '../actions';
 
@@ -23,8 +23,9 @@ const books = createReducer(initialState, (builder) => {
       state.books = action.payload;
       state.isDataLoaded = true;
     })
-    .addCase(changeFavorite, (state, action) => {
-      state.books = Util.getUpdatedBooks(action.payload.id, state.books, action.payload);
+    .addCase(changeFavoriteAction, (state, action) => {
+      state.books = Util.getUpdatedBooks(action.payload.id, state.books, action.payload.favorite);
+      return state;
     })
     .addCase(deleteItemAction, (state, action) => {
       state.books = Util.deleteItem(action.payload, state.books);

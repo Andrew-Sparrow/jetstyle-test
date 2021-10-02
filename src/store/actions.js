@@ -18,9 +18,9 @@ export const loadBooks = createAction(
   (books) => ({payload: books})
 );
 
-export const changeFavorite = createAction(
+export const changeFavoriteAction = createAction(
   ActionType.CHANGE_FAVORITE,
-  (id, newPlace) => ({payload: {id, newPlace}})
+  (id, favorite) => ({payload: {id, favorite}})
 )
 
 export const deleteItemAction = createAction(
