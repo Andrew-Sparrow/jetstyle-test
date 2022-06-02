@@ -9,9 +9,9 @@ import LoadingScreen from '../loading-screen/loading-screen';
 import {getIsDataLoaded} from '../../store/books/selectors';
 
 function App() {
-  const isDataLoaded = useSelector(getIsDataLoaded);
+  const isBooksLoading = useSelector(getIsDataLoaded);
 
-  if (!isDataLoaded) {
+  if (isBooksLoading) {
     return (
       <LoadingScreen />
     );

@@ -2,16 +2,22 @@ import {
   loadBooks,
   changeFavoriteAction,
   deleteItemAction,
+  isBooksLoading
 } from './actions';
 
 import {APIRoute} from '../const';
 
 export const fetchBooksList = () => (dispatch, _getState, api) => (
   api.get(APIRoute.BOOKS)
-    .then(({data}) => {
+    .then(({ data }) => {
+      dispatch(isBooksLoading(true));
       dispatch(loadBooks(data));
     })
     .catch((err) => {})
+    .finally(() => {
+      dispatch(isBooksLoading(false));
+    })
+
 );
 
 export const addToFavoriteApi = (id, isFavorite) => (dispatch, _getState, api) => (

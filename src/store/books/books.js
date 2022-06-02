@@ -1,16 +1,17 @@
-import {createReducer} from '@reduxjs/toolkit';
+import { createReducer } from '@reduxjs/toolkit';
 import Util from '../../util/util';
 
 import {
   changeGroup,
   loadBooks,
   changeFavoriteAction,
+  isBooksLoading,
   deleteItemAction
 } from '../actions';
 
 const initialState = {
   books: [],
-  isDataLoaded: false,
+  isBooksLoading: false,
   activeGroupName: 'All',
 };
 
@@ -21,7 +22,9 @@ const books = createReducer(initialState, (builder) => {
     })
     .addCase(loadBooks, (state, action) => {
       state.books = action.payload;
-      state.isDataLoaded = true;
+    })
+    .addCase(isBooksLoading, (state, action) => {
+      state.isBooksLoading = action.payload;
     })
     .addCase(changeFavoriteAction, (state, action) => {
       state.books = Util.getUpdatedBooks(action.payload.id, state.books, action.payload.favorite);
@@ -32,4 +35,4 @@ const books = createReducer(initialState, (builder) => {
     })
 });
 
-export {books};
+export { books };
