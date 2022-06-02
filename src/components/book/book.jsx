@@ -17,7 +17,8 @@ function Book(props) {
 
   const onDeleteClick = (evt) => {
     evt.preventDefault();
-    dispatch(deleteItemApi(id));
+    console.log('delete');
+    // dispatch(deleteItemApi(id));
   };
 
   return (

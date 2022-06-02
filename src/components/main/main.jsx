@@ -9,7 +9,7 @@ import {getBooks} from '../../store/books/selectors';
 
 function Main() {
   const books = useSelector(getBooks);
-  // console.log(books)
+  console.log(books)
   useEffect(() => {
   }, [books])
 
