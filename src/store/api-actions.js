@@ -1,6 +1,5 @@
 import {
   loadBooks,
-  changeFavoriteAction,
   deleteItemAction,
   isBooksLoading
 } from './actions';
@@ -17,14 +16,6 @@ export const fetchBooksList = () => (dispatch, _getState, api) => (
     .finally(() => {
       dispatch(isBooksLoading(false));
     })
-);
-
-export const addToFavoriteApi = (id, isFavorite) => (dispatch, _getState, api) => (
-  api.patch(`${ APIRoute.BOOKS }/${ id }`, {favorite: isFavorite})
-    .then((info) => {
-      dispatch(changeFavoriteAction(id, info.data.favorite));
-    })
-    .catch((err) => {})
 );
 
 export const deleteItemApi = (id) => (dispatch, _getState, api) => (
