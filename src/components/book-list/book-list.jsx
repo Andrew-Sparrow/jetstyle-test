@@ -9,7 +9,6 @@ import Pagination from '../pagination/pagination';
 
 const FIRST_PAGE_NUMBER = 0; // the initialPageNumber starts with zero
 const ITEMS_PER_PAGE = 3;
-let prevTabName = '';
 let prevBooks = [];
 
 function ContactList(props) {
@@ -46,12 +45,11 @@ function ContactList(props) {
   const [state, dispatch] = useReducer(reducer, initialPageNumber, init);
 
   useEffect(() => {
-    if (prevTabName !== activeTabName || prevBooks !== activeBooks) {
+    if (prevBooks !== activeBooks) {
       dispatch({type: 'changeSlicedItems', payload: []});
       dispatch({type: 'changeSlicedItems', payload: slicedItems});
       dispatch({type: 'changePageNumber', payload: FIRST_PAGE_NUMBER});
     }
-    prevTabName = activeTabName;
     prevBooks = activeBooks;
   }, [activeTabName, slicedItems, activeBooks]);
 
@@ -91,7 +89,6 @@ function ContactList(props) {
 ContactList.propTypes = {
   items: PropTypes.arrayOf(contactProp),
   initialPageNumber: PropTypes.number,
-  activeTabName: PropTypes.string,
   activeState: PropTypes.array,
   onListItemHover: PropTypes.func,
 };
