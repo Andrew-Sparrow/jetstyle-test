@@ -19,7 +19,7 @@ function Main() {
       <h1 className="visually-hidden">Books</h1>
       {
         books.length === 0
-          ? <MainEmpty activeGroupName={activeGroupName}/>
+          ? <MainEmpty />
           : (
             <div className="cities">
               <div className="cities__places-container container">
