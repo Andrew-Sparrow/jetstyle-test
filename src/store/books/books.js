@@ -10,7 +10,6 @@ import {
 const initialState = {
   books: [],
   isBooksLoading: false,
-  activeGroupName: 'All',
 };
 
 const books = createReducer(initialState, (builder) => {

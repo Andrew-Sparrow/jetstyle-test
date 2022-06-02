@@ -2,15 +2,6 @@ import nanoid from 'nanoid';
 import {groupNames} from '../const';
 
 const Util = {
-  getFilteredBooks (activeGroup, books) {
-    let filteredBooks = [];
-    if (activeGroup === groupNames.ALL) {
-      return books;
-    }
-    filteredBooks = books.filter((item) => item.group === activeGroup);
-    return filteredBooks;
-  },
-
   getFavoritesBooks(activeGroup, books) {
     let favoritesBooks = [];
     if (activeGroup === groupNames.ALL) {

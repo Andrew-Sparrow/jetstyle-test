@@ -15,7 +15,6 @@ function ContactList(props) {
   const {
     items,
     initialPageNumber,
-    activeTabName,
     activeBooks
   } = props;
 
@@ -51,7 +50,7 @@ function ContactList(props) {
       dispatch({type: 'changePageNumber', payload: FIRST_PAGE_NUMBER});
     }
     prevBooks = activeBooks;
-  }, [activeTabName, slicedItems, activeBooks]);
+  }, [slicedItems, activeBooks]);
 
 
   const pageNumberClickHandler = (dataPagination) => {

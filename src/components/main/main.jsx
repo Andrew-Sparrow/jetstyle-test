@@ -1,18 +1,19 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import {useSelector} from 'react-redux';
 
 import ContactList from '../book-list/book-list';
 import withLayout from '../hocs/with-layout';
 
-import Util from '../../util/util';
 import MainEmpty from '../main-empty/main-empty';
-import {getBooks, getActiveGroupName} from '../../store/books/selectors';
+import {getBooks} from '../../store/books/selectors';
 
 function Main() {
-  const activeGroupName = useSelector(getActiveGroupName);
   const books = useSelector(getBooks);
 
-  const filteredBooks = Util.getFavoritesBooks(activeGroupName, books);
+  useEffect(() => {
+
+  }, [books])
+
 
   return (
     <main className="page__main page__main--index">
@@ -30,8 +31,7 @@ function Main() {
                     items={books}
                     // first page number
                     initialPageNumber={0}
-                    activeTabName={activeGroupName}
-                    activeBooks={filteredBooks}
+                    activeBooks={books}
                   />
                 </section>
               </div>

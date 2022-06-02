@@ -9,6 +9,7 @@ import {APIRoute} from '../const';
 export const fetchBooksList = () => (dispatch, _getState, api) => (
   api.get(APIRoute.BOOKS)
     .then(({ data }) => {
+      console.log(data)
       dispatch(isBooksLoading(true));
       dispatch(loadBooks(data));
     })
