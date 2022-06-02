@@ -17,7 +17,6 @@ export const fetchBooksList = () => (dispatch, _getState, api) => (
     .finally(() => {
       dispatch(isBooksLoading(false));
     })
-
 );
 
 export const addToFavoriteApi = (id, isFavorite) => (dispatch, _getState, api) => (

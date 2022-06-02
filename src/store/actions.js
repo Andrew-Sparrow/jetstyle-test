@@ -6,7 +6,7 @@ export const ActionType = {
   LOAD_BOOKS: 'books/loadBooks',
   CHANGE_FAVORITE: 'books/isFavorite',
   DELETE_ITEM: 'books/delete',
-  REDIRECT_TO_ROUTE: 'places/redirectToRoute',
+  REDIRECT_TO_ROUTE: 'books/redirectToRoute',
 };
 
 export const changeGroup = createAction(

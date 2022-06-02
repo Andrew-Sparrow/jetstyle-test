@@ -6,12 +6,12 @@ import {AppRoute} from '../../const';
 import Main from '../main/main';
 import Error from '../not-found/not-found';
 import LoadingScreen from '../loading-screen/loading-screen';
-import {getIsDataLoaded} from '../../store/books/selectors';
+import { getIsDataLoading } from '../../store/books/selectors';
 
 function App() {
-  const isBooksLoading = useSelector(getIsDataLoaded);
+  const isDataLoading = useSelector(getIsDataLoading);
 
-  if (isBooksLoading) {
+  if (isDataLoading) {
     return (
       <LoadingScreen />
     );
